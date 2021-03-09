@@ -32,6 +32,10 @@ public class Student {
         return this.firstName;
     }
 
+    /**
+     * translate in the first name the first character into large case and  check if the name is written more than 2
+     * characters
+     */
     public void setFirstName(String firstName) {
         if ( firstName.length()>2) {
             this.firstName = firstName.substring(0,1).toUpperCase()+firstName.substring(1);
@@ -44,20 +48,26 @@ public class Student {
         return this.lastName;
     }
 
+    /**
+     *  check if the lastname is written more than 2 characters
+     */
     public void setLastName(String lastName) {
-        if(lastName.length()<=2){
-            throw new IllegalArgumentException("Error! Please write your last name with more then 2 characters");
+        if(lastName.length()>2){
+            this.lastName = lastName;
         }
         else
-            this.lastName = lastName;
+            throw new IllegalArgumentException("Error! Please write your last name with more then 2 characters");
     }
 
     public int getStudentNumber() {
         return studentNumber;
     }
 
+    /**
+     *  check if the student number is less than 999999999 and more than 100000000
+     */
     public void setStudentNumber(int studentNumber) {
-        if ( studentNumber >= 100000000 && studentNumber<= 999999999){
+        if ( studentNumber >= 100000000 && studentNumber <= 999999999){
             this.studentNumber = studentNumber;
         }
         else
